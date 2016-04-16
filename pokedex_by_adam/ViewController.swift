@@ -30,6 +30,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         initAudio()
         
+        
     }
     
     func initAudio() {
@@ -98,7 +99,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             poke = pokemon[indexPath.row]
         }
         print(poke.name)
-        performSegueWithIdentifier("PokemonDetailVC", sender: poke)
+        performSegueWithIdentifier("PokemonDetailVC2", sender: poke)
     }
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -148,8 +149,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "PokemonDetailVC" {
-            if let detailVC  = segue.destinationViewController as? PokemonDetailVC {
+        if segue.identifier == "PokemonDetailVC2" {
+            if let detailVC  = segue.destinationViewController as? PokemonDetailVC2 {
                 if let poke = sender as? Pokemon {
                     detailVC.pokemon = poke
                 }
